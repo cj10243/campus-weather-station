@@ -1,4 +1,5 @@
 from .base import *
+import os
 SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
 '''
 DATABASES = {
@@ -13,11 +14,12 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'weatherstation',
-        'USER': 'weathertw',
-        'PASSWORD': 'nhcc9487',
-        'HOST': '203.72.63.54',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        #'HOST': os.environ['DB_HOST'],   # Or an IP Address that your DB is hosted on
+        'HOST': '203.72.63.54',
+        'PORT': 3306,
     }
 }
 '''
