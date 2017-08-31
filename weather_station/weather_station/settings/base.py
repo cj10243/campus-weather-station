@@ -15,6 +15,8 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print(os.path.dirname(BASE_DIR))
+print(os.path.dirname(BASE_DIR))
 def get_env_var(key):
     try:
         return os.environ[key]
