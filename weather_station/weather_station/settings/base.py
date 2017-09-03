@@ -13,10 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.core.exceptions import ImproperlyConfigured
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-print(os.path.dirname(BASE_DIR))
-print(os.path.dirname(BASE_DIR))
+
 def get_env_var(key):
     try:
         return os.environ[key]
@@ -29,7 +27,7 @@ def get_env_var(key):
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
+get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -64,7 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'weather_station.urls'
+ROOT_URLCONF = 'weather_station.weather_station.urls'
 
 TEMPLATES = [
     {
