@@ -27,7 +27,7 @@ def get_env_var(key):
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,7 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'weather_station.weather_station.urls'
+ROOT_URLCONF = '    weather_station.urls'
 
 TEMPLATES = [
     {

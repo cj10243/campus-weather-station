@@ -1,6 +1,6 @@
 from .base import *
 import os
-get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
+
 '''
 DATABASES = {
     'default': {
@@ -17,8 +17,7 @@ DATABASES = {
         'NAME': os.environ['DB_NAME'],
         'USER': os.environ['DB_USER'],
         'PASSWORD': os.environ['DB_PASSWORD'],
-        #'HOST': os.environ['DB_HOST'],   # Or an IP Address that your DB is hosted on
-        'HOST': '203.72.63.54',
+        'HOST': os.environ['DB_HOST'],
         'PORT': 3306,
     }
 }

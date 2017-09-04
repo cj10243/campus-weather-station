@@ -4,6 +4,7 @@ DEBUG = False
 
 SECRET_KEY = get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
