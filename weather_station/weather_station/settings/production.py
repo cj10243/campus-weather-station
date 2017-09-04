@@ -2,8 +2,8 @@ from .base import *
 
 DEBUG = False
 
-SECRET_KEY = get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
-
+#SECRET_KEY = get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
+SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
