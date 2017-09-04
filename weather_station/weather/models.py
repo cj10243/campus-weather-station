@@ -4,11 +4,11 @@ from django.db import models
 
 class Weather(models.Model):
     time = models.DateTimeField()
-    temperature = models.DecimalField(max_digits=3,decimal_places=1)
-    humidity = models.DecimalField(max_digits=3,decimal_places=1)
-    uv = models.IntegerField()
-    light = models.IntegerField()
-    pm = models.DecimalField(max_digits=2,decimal_places=1)
+    temperature = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
+    humidity = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
+    uv = models.IntegerField(default=None,null=True)
+    light = models.IntegerField(default=None,null=True)
+    rainfall = models.IntegerField(default=None,null=True)
 
     def __repr__(self):
         return self.time
