@@ -11,7 +11,7 @@ class Weather(models.Model):
     pm = models.DecimalField(max_digits=2,decimal_places=1)
 
     def __repr__(self):
-        return self.time
+        return str(self.time)
     #之前沒有加str()出現TypeError: __repr__ returned non-string (type datetime.datetime)
 
 
