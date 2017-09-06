@@ -8,7 +8,7 @@ class Weather(models.Model):
     humidity = models.DecimalField(max_digits=3,decimal_places=1)
     uv = models.IntegerField()
     light = models.IntegerField()
-    pm = models.DecimalField(max_digits=2,decimal_places=1)
+    rainfall = models.DecimalField(max_digits=2,decimal_places=1)
 
     def __repr__(self):
         return str(self.time)
