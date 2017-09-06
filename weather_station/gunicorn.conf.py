@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# /usr/bin/python3
 import os
 
 bind = '203.72.63.200:8000'
