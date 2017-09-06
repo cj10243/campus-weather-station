@@ -10,9 +10,14 @@ class Weather(models.Model):
     light = models.IntegerField()
     rainfall = models.DecimalField(max_digits=2,decimal_places=1)
 
-    def __repr__(self):
-        return str(self.time)
+    def __str__(self):
+        weather = '{0.time} {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
+        return weather.format(self)
+
+
     #之前沒有加str()出現TypeError: __repr__ returned non-string (type datetime.datetime)
+
+
 
 
 
