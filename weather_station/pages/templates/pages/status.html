@@ -1,13 +1,144 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
+<div class="station-list">
+        <div class="container">
+            <div class="cards">
+                <div class="weather">
+                    <div class="station">Taipei</div>
+                    <div class="tempature">
+                        <span class="value">23</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-cloudy"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">23</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">48%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="weather">
+                    <div class="station">Hsinchu</div>
+                    <div class="tempature">
+                        <span class="value">23</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-windy2"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">8</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">76%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="cards">
+                <div class="weather">
+                    <div class="station">Taichung</div>
+                    <div class="tempature">
+                        <span class="value">23</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-sun"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">8</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">76%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="cards">
+                <div class="weather">
+                    <div class="station">Tainan</div>
+                    <div class="tempature">
+                        <span class="value">23</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-windy2"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">8</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">76%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="cards">
+                <div class="weather">
+                    <div class="station">Kaohsiung</div>
+                    <div class="tempature">
+                        <span class="value">23</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-windy2"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">8</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">76%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="cards">
+                <div class="weather">
+                    <div class="station">Kenting</div>
+                    <div class="tempature">
+                        <span class="value">31</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-sun"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">14</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">10%</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="col-md-12">
         {{ div|safe }}
-    </div>
+</div>
 
 
 
-	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.js"></script>
-    {{ script|safe }}
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.js"></script>
+{{ script|safe }}
 
 
 {% endblock %}
