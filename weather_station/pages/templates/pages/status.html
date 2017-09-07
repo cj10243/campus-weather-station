@@ -7,7 +7,7 @@
                 <div class="weather">
                     <div class="station">台北市立內湖高中</div>
                     <div class="tempature">
-                        <span class="value">{{weather.temperature}}</span>
+                        <span class="value">{{weather[0].temperature}}</span>
                         <i class="icon-Celsius"></i>
                         <i class="large icon-cloudy"></i>
                     </div>
@@ -16,7 +16,7 @@
                             <i class="icon-wind"></i><span class="value">23</span><span> km/h</span>
                         </div>
                         <div class="humidity">
-                            <i class="icon-rainy2"></i><span class="humidity">{{weather.humidity}}</span>
+                            <i class="icon-rainy2"></i><span class="humidity">{{weather[0].humidity}}</span>
                         </div>
                     </div>
                     <div class="actions">
