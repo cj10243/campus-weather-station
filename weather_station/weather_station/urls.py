@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from pages.views import home
+from pages.views import home,about
 from chart.views import status
 from rest_framework import routers
 from weather import views
@@ -14,6 +14,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', home, name='home'),
     url(r'^status/$', status, name='draw'),
+    url(r'^about/$', about, name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
