@@ -1,0 +1,22 @@
+@import "susy";
+
+$susy: (
+    columns: 12,
+    gutters: 1/4,      //只能用幾分之幾，不能用單位
+    column-width: 60px, //預設是false，但要透過Susy2自動計算出總寬此變數必加
+    math: fluid,       //使用fluid的話，所有編譯出來的單位都是%，但使用[static]再配合column-width則就會變成px、em
+    output: float,
+    gutter-position: split,
+    container-position: center,
+    global-box-sizing: border-box
+);
+
+.container {
+  @include container(12);
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i}{
+      @include span($i)
+    }
+}

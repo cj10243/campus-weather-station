@@ -14,7 +14,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+<<<<<<< HEAD
 
+=======
+print("current base dir {}".format(os.path.dirname(BASE_DIR)))
+>>>>>>> e487ef98e1453eaec13b0c4aea851be16bcbc84c
 def get_env_var(key):
     try:
         return os.environ[key]
@@ -27,7 +31,11 @@ def get_env_var(key):
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 
+=======
+#SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
+>>>>>>> e487ef98e1453eaec13b0c4aea851be16bcbc84c
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

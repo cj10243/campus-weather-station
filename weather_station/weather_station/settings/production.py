@@ -12,7 +12,7 @@ DATABASES = {
         'USER': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_USER'),
         'PASSWORD': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_PASSWORD'),
         'HOST': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_HOST'),
-        'PORT': '',
+        'PORT': '3306',
     },
 }
 

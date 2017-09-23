@@ -4,4 +4,4 @@ from .models import Weather
 class MenuItemRelatedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Weather
-        fields = ('time' ,'temperature','humidity' ,'uv' ,'light','pm')
+        fields = ('time' ,'temperature','humidity' ,'uv' ,'light','rainfall')

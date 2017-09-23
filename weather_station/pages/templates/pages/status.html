@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
+<div class="station-list">
+        <div class="container">
+            <div class="cards">
+                <div class="weather">
+                    <div class="station">台北市立內湖高中</div>
+                    <div class="tempature">
+                        <span class="value">{{weather[0].temperature}}</span>
+                        <i class="icon-Celsius"></i>
+                        <i class="large icon-cloudy"></i>
+                    </div>
+                    <div class="status">
+                        <div class="wind">
+                            <i class="icon-wind"></i><span class="value">23</span><span> km/h</span>
+                        </div>
+                        <div class="humidity">
+                            <i class="icon-rainy2"></i><span class="humidity">{{weather[0].humidity}}</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-flat">Full Report</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 <div class="col-md-12">
         {{ div|safe }}
-    </div>
+</div>
 
 
 
-	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.js"></script>
-    {{ script|safe }}
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.js"></script>
+{{ script|safe }}
 
 
 {% endblock %}
