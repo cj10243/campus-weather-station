@@ -1,6 +1,6 @@
 from .base import *
 import os
-
+DEBUG = True
 '''
 DATABASES = {
     'default': {
