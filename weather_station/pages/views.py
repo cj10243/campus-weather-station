@@ -7,9 +7,13 @@ class HomeView(TemplateView):
 
 class StatusView(TemplateView):
     template_name = "pages/status.html"
-
+    def get_context_data(self, **kwargs):
+        context = super(StatusView, self).get_context_data(**kwargs)
+        context['weathers'] = Weather.objects.all()
+        return context
+    '''
     def weathers(self):
-        return Weather.objects.all()
-
+        return Weather.objects.order_by().all()[0]
+'''
 class AboutView(TemplateView):
     template_name = "pages/about.html"
