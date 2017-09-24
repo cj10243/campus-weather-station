@@ -1,36 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<header class="index full" style="background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url(static {% static 'base\imgs\school.jpg  '%});"> <header>
+<header class="index full" style="background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url({% static 'base\imgs\school.jpg' %});">
+    <div class="content">
+        <h1>校園氣象站服務</h1>
+    </div>
+    <a href="#one"></a>
+</header>
+<section class="sec one">
+    <div class="inner">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1487357298028-b07e960d15a9?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="">
+        </div>
         <div class="content">
-            <h1>校園氣象站服務</h1>
+            <h2>即時、精準、多節點</h2>
+            <p>氣象站服務系統以校園為基礎，架設氣象站節點，即時取得學校附近的天氣狀況。</p>
         </div>
-        <a href="#one"></a>
-    </header>
-    <section class="sec one">
-        <div class="inner">
-            <div class="image">
-                <img src="https://images.unsplash.com/photo-1487357298028-b07e960d15a9?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="">
-            </div>
-            <div class="content">
-                <h2>即時、精準、多節點</h2>
-                <p>氣象站服務系統以校園為基礎，架設氣象站節點，即時取得學校附近的天氣狀況。</p>
-            </div>
+    </div>
+</section>
+<section class="sec one">
+    <div class="inner">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1487357298028-b07e960d15a9?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="">
         </div>
-    </section>
-    <section class="sec one">
-        <div class="inner">
-            <div class="image">
-                <img src="https://images.unsplash.com/photo-1487357298028-b07e960d15a9?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="">
-            </div>
-            <div class="content">
-                <h2>開源與合作</h2>
-                <p>
-                    氣象站完整開放原始碼，與自造者或校園合作，簡單的節點架設，讓任何人皆可為自己
-                    打造一組氣象站，並將資料分享給網際網路上的所有用戶，這意味著除了我們提供的節點外，
-                    我們也接收私人氣象站的資料</p>
-            </div>
+        <div class="content">
+            <h2>開源與合作</h2>
+            <p>
+                氣象站完整開放原始碼，與自造者或校園合作，簡單的節點架設，讓任何人皆可為自己
+                打造一組氣象站，並將資料分享給網際網路上的所有用戶，這意味著除了我們提供的節點外，
+                我們也接收私人氣象站的資料</p>
         </div>
-    </section>
+    </div>
+</section>
 
 {% endblock %}
