@@ -1,27 +1,43 @@
 from django.shortcuts import render
 from weather.models import Weather
-from bokeh.models.widgets import Dropdown
-from bokeh.plotting import figure
-from bokeh.embed import components
-def status(request):
-    plot = figure()
 
-    plot.circle([1,2], [3,4],[1,2], [3,4],[1,2], [3,4],[1,2], [3,4])
+from chartit import DataPool, Chart
 
-    script, div = components(plot)
+def weather_chart_view(request):
+    #Step 1: Create a DataPool with the data we want to retrieve.
+    weatherdata = \
+        DataPool(
+            series=
+            [{'options': {
+                'source': Weather.objects.all()},
+                'terms': [
+                    'time',
+                    'temperature',
+                    'humidity',
+                    'uv',
+                    'light',
+                    'rainfall',
+                    ]}
+            ])
 
+    #Step 2: Create the Chart object
+    cht = Chart(
+        datasource = weatherdata,
+        series_options =
+        [{'options':{
+            'type': 'line',
+            'stacking': False},
+            'terms':{
+                'month': [
+                    'boston_temp',
+                    'houston_temp']
+            }}],
+        chart_options =
+        {'title': {
+            'text': 'Weather Data of Boston and Houston'},
+            'xAxis': {
+                'title': {
+                    'text': 'Month number'}}})
 
-    return render(request, 'pages/status.html', {'div': div,'script':script})
-
-'''
-def draw(number,title):
-    #weather = Weather.objects.all()
-    plot = figure(logo=None,x_axis_type="datetime",title="{}".format(title),plot_height=500,plot_width=500)
-    plot.line([i for i in range(0,100)],[i for i in range(0,100)])
-    template = get_template('status.html')
-
-    script, div = components(grid, button_group)
-    html = template.render(locals())
-    return HttpResponse(html)
-# Create your views here.
-'''
+    #Step 3: Send the chart object to the template.
+    return render_to_response({'weatherchart': cht})
