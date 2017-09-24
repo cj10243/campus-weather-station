@@ -4,7 +4,6 @@ from django.db import models
 
 class Weather(models.Model):
     time = models.DateTimeField()
-
     temperature = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     humidity = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     uv = models.IntegerField(default=None,null=True)
@@ -17,6 +16,7 @@ class Weather(models.Model):
 
 
     #之前沒有加str()出現TypeError: __repr__ returned non-string (type datetime.datetime)
+
 
 
 
