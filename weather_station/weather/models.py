@@ -4,6 +4,7 @@ from django.db import models
 
 class Weather(models.Model):
     time = models.DateTimeField()
+    school_id = models.CharField(max_length=8,default="nhcc")
     temperature = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     humidity = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     uv = models.IntegerField(default=None,null=True)
