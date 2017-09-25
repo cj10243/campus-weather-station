@@ -11,7 +11,7 @@ class StatusView(TemplateView):
     template_name = "pages/status.html"
     def get_context_data(self, **kwargs):
         context = super(StatusView, self).get_context_data(**kwargs)
-        context['weathers'] = Weather.objects.all()
+        context['weathers'] = Weather.objects.order_by('-time')[0]
         return context
     '''
     def weathers(self):
