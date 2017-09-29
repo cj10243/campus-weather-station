@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 {% load static %}
 <div class="station-list">
@@ -7,7 +8,7 @@
                 <div class="weather">
                     <div class="station">台北市立內湖高中</div>
                     <div class="tempature">
-                        <span class="value">{{weathers.1.temperature}}</span>
+                        <span class="value">{{weathers.temperature}}</span>
                         <i class="icon-Celsius"></i>
                         <i class="large icon-cloudy"></i>
                     </div>
@@ -27,41 +28,26 @@
 
         </div>
     </div>
-<div class="col-md-12">
-        {{ div|safe }}
-</div>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-<script type="text/javascript">
-Highcharts.chart('container', {
-chart: {
-type: 'line'
-},
-title: {
-text: '歷史24小時天氣變化'
-},
-
-xAxis: {
-categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-},
-yAxis: {
-title: {
-text: 'Temperature (°C)'
-}
-},
-plotOptions: {
-line: {
-dataLabels: {
-enabled: true
-},
-enableMouseTracking: false
-}
-},
-series: [{
-name: '台北市立內湖高中',
-data: {{weathers.rainfall}}
-}, ]
-});
+<div id="container2" style="width:100%; height:400px;"></div>
+<!--
+<div id={{ chartID|safe }} class="chart" style="height: 100px; width: 500px"></div>
+<script>
+	var chart_id = {{ chartID|safe }}
+	var series = {{ series|safe }}
+	var title = {{ title|safe }}
+	var xAxis = {{ xAxis|safe }}
+	var yAxis = {{ yAxis|safe }}
+	var chart = {{ chart|safe }}
 </script>
-{% endblock %}
+-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.14/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.14/js/modules/drilldown.js"></script>
+{% endblock content%}
+
+{% block js %}
+<script src="{% static 'pages/js/chart.js' %}"></script>
+<script src="{% static 'pages/js/graphic.js' %}"></script>
+{% endblock js %}
+

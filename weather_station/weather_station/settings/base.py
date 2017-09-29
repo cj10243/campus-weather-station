@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.core.exceptions import ImproperlyConfigured
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 print("current base dir {}".format(os.path.dirname(BASE_DIR)))
 def get_env_var(key):
@@ -80,14 +81,7 @@ TEMPLATES = [
         },
     },
 ]
-'''
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser',
-    ],
-    'PAGE_SIZE': 10
-}
-'''
+
 
 WSGI_APPLICATION = 'weather_station.wsgi.application'
 
