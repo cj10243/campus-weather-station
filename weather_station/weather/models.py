@@ -4,7 +4,7 @@ from django.db import models
 
 class Weather(models.Model):
     time = models.DateTimeField()
-    school_id = models.CharField(max_length=8,default="nhcc")
+    school_id = models.CharField(max_length=8,default="nhsh")
     temperature = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     humidity = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     uv = models.IntegerField(default=None,null=True)
@@ -12,7 +12,7 @@ class Weather(models.Model):
     rainfall = models.IntegerField(default=None,null=True)
 
     def __str__(self):
-        weather = '{0.time} {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
+        weather = '{0.time} {0.school_id} {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
         return weather.format(self)
 
 
