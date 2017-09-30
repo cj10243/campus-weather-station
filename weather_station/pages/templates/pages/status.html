@@ -1,67 +1,63 @@
 {% extends "base.html" %}
+
 {% block content %}
 {% load static %}
-<div class="station-list">
-        <div class="container">
-            <div class="cards">
-                <div class="weather">
-                    <div class="station">台北市立內湖高中</div>
-                    <div class="tempature">
-                        <span class="value">{{weathers.1.temperature}}</span>
-                        <i class="icon-Celsius"></i>
-                        <i class="large icon-cloudy"></i>
-                    </div>
-                    <div class="status">
-                        <div class="wind">
-                            <i class="icon-wind"></i><span class="value">23</span><span> km/h</span>
-                        </div>
-                        <div class="humidity">
-                            <i class="icon-rainy2"></i><span class="humidity">{{weathers.humidity}}</span>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <a class="btn btn-flat">Full Report</a>
-                    </div>
-                </div>
-            </div>
-
+<header class="header" style="background-image: url(https://unsplash.it/1583/315?random&element=DIV);">
+<div class="overlay">
+    <div class="container">
+        <div class="message">
+            <h1>歡迎使用氣象站服務</h1>
         </div>
     </div>
-<div class="col-md-12">
-        {{ div|safe }}
-</div>
+    <a href="#one"></a></div>
+</header>
+<div class="station-list">
+    <div class="container">
+       {% for weather in weathers %}
+        <div class="cards">
+            <div class="weather">
+                <div class="station">{{weather.school.name}}</div>
+                <div class="tempature">
+                    <span class="value">{{weather.temperature}}</span>
+                    <i class="icon-Celsius"></i>
+                    <i class="large icon-cloudy"></i>
+                </div>
+                <div class="status">
+                    <div class="humidity">
+                        <i class="icon-rainy2"></i><span class="humidity">{{weather.humidity}}%</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-flat">Full Report</a>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<script type="text/javascript">
-Highcharts.chart('container', {
-chart: {
-type: 'line'
-},
-title: {
-text: '歷史24小時天氣變化'
-},
 
-xAxis: {
-categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-},
-yAxis: {
-title: {
-text: 'Temperature (°C)'
-}
-},
-plotOptions: {
-line: {
-dataLabels: {
-enabled: true
-},
-enableMouseTracking: false
-}
-},
-series: [{
-name: '台北市立內湖高中',
-data: {{weathers.rainfall}}
-}, ]
-});
-</script>
+<div id="container2" style="width:100%; height:400px;"></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.14/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.14/js/modules/drilldown.js"></script>
 {% endblock %}
+
+{% block js %}
+<script src="{% static 'pages/js/chart.js' %}"></script>
+
+{% endblock js %}
+
+<!--
+<div id={{ chartID|safe }} class="chart" style="height: 100px; width: 500px"></div>
+<script>
+	var chart_id = {{ chartID|safe }}
+	var series = {{ series|safe }}
+	var title = {{ title|safe }}
+	var xAxis = {{ xAxis|safe }}
+	var yAxis = {{ yAxis|safe }}
+	var chart = {{ chart|safe }}
+</script>
+-->
