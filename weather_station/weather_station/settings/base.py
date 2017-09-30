@@ -45,7 +45,6 @@ INSTALLED_APPS = (
     'base',
     'school',
     'weather',
-    'url_filter',
     'rest_framework',
     'django_filters',
     'django.contrib.admin',
