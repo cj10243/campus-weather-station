@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from  weather.models import Weather
+from school.models import School
 from django.views.generic.base import TemplateView
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -12,12 +13,13 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
+
         temperature = [Weather.objects.order_by('-time')[i].temperature for i in range(287)][::-1]
+        print(temperature)
         humidity = [Weather.objects.order_by('-time')[i].humidity for i in range(287)][::-1]
         uv = [Weather.objects.order_by('-time')[i].uv for i in range(287)][::-1]
         light = [Weather.objects.order_by('-time')[i].light for i in range(287)][::-1]
         rainfall = [Weather.objects.order_by('-time')[i].rainfall for i in range(287)][::-1]
-
         labels = ["Temperature", "Humidity", "UV", "Light", "RainFall"]
         data = {
             "temperature": temperature,
@@ -33,20 +35,18 @@ class StatusView(TemplateView):
     template_name = "pages/status.html"
     def get_context_data(self, **kwargs):
         context = super(StatusView, self).get_context_data(**kwargs)
-        context['weathers'] = Weather.objects.order_by('-time')[0]
+        schools = School.objects.all()
+        context['weathers'] =  [Weather.objects.filter(school=schools[i]).order_by('-time')[0] for i in range(0,len(schools))]
+
+
         # context['chart'] = {"renderTo":context['chartID'], "type": "line", "height": 500,}
         # context['series'] = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
         # context['title'] = {"text": 'My Title'}
         # context['xAxis'] = {"categories": ['xAxis Data1', 'xAxis Data2', 'xAxis Data3']}
         # context['yAxis'] = {"title": {"text": 'yAxis Label'}}
         return context
-    '''
-    def weathers(self):
-        return Weather.objects.order_by().all()[0]
-'''
+
 class AboutView(TemplateView):
     template_name = "pages/about.html"
 
 
-tpr = StatusView()
-tpr.get_context_data(chartID="te    mperature")
