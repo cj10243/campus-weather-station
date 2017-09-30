@@ -1,6 +1,6 @@
 from .base import *
 import os
-DEBUG = True
+SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
 '''
 DATABASES = {
     'default': {
@@ -14,7 +14,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'weatherstation',
+        'NAME': 'weatherstation_test',
         'USER': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_USER'),
         'PASSWORD': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_PASSWORD'),
         'HOST': get_env_var('DJANGO_WEATHER_STATION_DATABASE_DEFAULT_HOST'),

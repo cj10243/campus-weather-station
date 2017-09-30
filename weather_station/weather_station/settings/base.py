@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.core.exceptions import ImproperlyConfigured
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 print("current base dir {}".format(os.path.dirname(BASE_DIR)))
-
 def get_env_var(key):
     try:
         return os.environ[key]
@@ -29,22 +29,21 @@ def get_env_var(key):
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_var('DJANGO_WEATHER_STATION_SECRET_KEY')
+#SECRET_KEY = 'ke67!frybp8=#&&n33m3l5tpc)#t9#rv@784z9)t&0crhl55@^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'chartit',
     'chart',
     'pages',
     'base',
+    'school',
     'weather',
     'rest_framework',
     'django.contrib.admin',
@@ -83,14 +82,7 @@ TEMPLATES = [
         },
     },
 ]
-'''
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser',
-    ],
-    'PAGE_SIZE': 10
-}
-'''
+
 
 WSGI_APPLICATION = 'weather_station.wsgi.application'
 
