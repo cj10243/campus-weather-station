@@ -1,5 +1,5 @@
 from django.db import models
-
+from school.models import School
 # Create your models here.
 
 class Weather(models.Model):
@@ -8,11 +8,16 @@ class Weather(models.Model):
     humidity = models.DecimalField(max_digits=3,decimal_places=1,default=None,null=True)
     uv = models.IntegerField(default=None,null=True)
     light = models.IntegerField(default=None,null=True)
-    rainfall = models.IntegerField(default=None,null=True)
+    rainfall = models.IntegerField(default=-1,null=True)
+    school = models.ForeignKey(School,related_name='weathers',db_column='school',default=None,on_delete=models.CASCADE)
 
     def __str__(self):
-        weather = '{0.time} {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
+        weather = '{0.time}  {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
         return weather.format(self)
+    class Meta:
+        db_table='weather'
+
+
 
 
     #之前沒有加str()出現TypeError: __repr__ returned non-string (type datetime.datetime)
