@@ -9,13 +9,17 @@
             <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
             <link rel="stylesheet" href="{% static 'base/css/grid.css' %}">
             <link rel="stylesheet" href="{% static 'base/css/normalize.css' %}">
-            <script src="https://code.highcharts.com/highcharts.js"></script>
-            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+
         </head>
-        <body style="padding-top: 100px;">
+        <body>
 			{% include 'header.html' %}
             {% block content %} {% endblock %}
-            <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script
+                    src="https://code.jquery.com/jquery-3.2.1.js"
+                    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                    crossorigin="anonymous"></script>
             <script src="{% static 'base/js/base.js' %}"></script>
             {% block js %}{% endblock js %}
         </body>
