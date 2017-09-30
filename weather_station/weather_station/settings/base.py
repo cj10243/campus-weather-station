@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'chart',
     'pages',
     'base',
+    'school',
     'weather',
     'rest_framework',
     'django.contrib.admin',
