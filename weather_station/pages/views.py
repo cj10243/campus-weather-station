@@ -39,6 +39,8 @@ class StatusView(TemplateView):
         context['weathers'] =  [Weather.objects.filter(school=schools[i]).order_by('-time')[0] for i in range(0,len(schools))]
 
 
+
+
         # context['chart'] = {"renderTo":context['chartID'], "type": "line", "height": 500,}
         # context['series'] = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
         # context['title'] = {"text": 'My Title'}
