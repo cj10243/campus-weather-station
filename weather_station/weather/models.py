@@ -1,5 +1,6 @@
 from django.db import models
 from school.models import School
+from datetime import datetime
 # Create your models here.
 
 class Weather(models.Model):
@@ -12,11 +13,14 @@ class Weather(models.Model):
     school = models.ForeignKey(School,related_name='weathers',db_column='school',default=None,on_delete=models.CASCADE)
 
     def __str__(self):
-        weather = '{0.time}  {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall}'
+        weather = '{0.time}  {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall} {0.school}'
         return weather.format(self)
     class Meta:
         db_table='weather'
-
+'''
+from django.utils import timezone
+Weather(timezone.now().strftime('%Y-%m-%d %H:%M:%S'),25,80,0,200,-1,1).save()
+'''
 
 
 
