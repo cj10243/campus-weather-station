@@ -31,12 +31,29 @@ class ChartData(APIView):
         }
         return Response(data,template_name='pages/status.html')
 
+
 class StatusView(TemplateView):
     template_name = "pages/status.html"
     def get_context_data(self, **kwargs):
         context = super(StatusView, self).get_context_data(**kwargs)
         schools = School.objects.all()
-        context['weathers'] =  [Weather.objects.filter(school=schools[i]).order_by('-time')[0] for i in range(0,len(schools))]
+
+        #context['weathers'] =  [Weather.objects.filter(school=i+1).order_by('-time')[0] for i in range(0,len(schools))]
+        context['weather'] = []
+        context['temperature'] = []
+        context['humidity'] = []
+        context['uv'] = []
+        context['light'] = []
+        context['rainfall'] = []
+        context['weathers'] = []
+        for i in range(0,len(schools)):
+            weathers_order_by_time = Weather.objects.filter(school=i+1).order_by('-time')
+            context['weather'].append(weathers_order_by_time[0])
+            context['temperature'].append([float(i.temperature) for i in weathers_order_by_time])
+            context['humidity'].append([i.humidity for i in weathers_order_by_time])
+            context['uv'].append([i.uv for i in weathers_order_by_time])
+            context['light'].append([i.light for i in weathers_order_by_time])
+            context['rainfall'].append([i.rainfall for i in weathers_order_by_time])
 
 
         # context['chart'] = {"renderTo":context['chartID'], "type": "line", "height": 500,}

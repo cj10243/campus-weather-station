@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width ,initial-scale=1">
     <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- prevent from getting /favicon.ico HTTP/1.1" 500 107507-->
     <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'base/css/grid.css' %}">
-    <link rel="stylesheet" href="{% static 'base/css/normalize.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
@@ -20,7 +21,10 @@
         src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="{% static 'base/js/base.js' %}"></script>
 {% block js %}{% endblock js %}
+{% include 'footer.html' %}
 </body>
 </html>
