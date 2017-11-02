@@ -5,11 +5,18 @@ from rest_framework import filters,pagination
 
 
 class WeatherViewSet(viewsets.ReadOnlyModelViewSet):
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('time' ,'temperature','humidity' ,'uv' ,'light','rainfall','school')
+    filter_backends = (filters.OrderingFilter,)
+    ordering_fields = ('-created')
+    filter_fields = ('created' ,'temperature','humidity' ,'uv' ,'light','rainfall','school')
     queryset = Weather.objects.all()
     serializer_class = WeatherSerializer
     lookup_field = "school"
     pagination.PageNumberPagination.pages_size = 100
     pagination.PageNumberPagination.paginate_by_param = 'pages_size'
+    #pagination.CursorPagination.page_size = 100
+    #pagination.LimitOffsetPagination.limit_query_param = 'limit'
+    #pagination.LimitOffsetPagination.offset_query_param = 'offset'
+    #pagination.CursorPagination.cursor_query_param  = 'cursor'
+    #ordering = ['created']
+
 
