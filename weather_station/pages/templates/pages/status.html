@@ -13,7 +13,7 @@
     <div class="card card-outline-info mb-3 text-center" style="width: 20rem;">
 
         <div class="card-block">
-            <h4 class="card-title">{{weather.school.name}}</h4>
+            <h4 class="card-title">{{weather.school.eng_name}}</h4>
             <p class="card-text">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">氣溫：30&#8451;</li>
@@ -98,7 +98,7 @@ $(function () {
             }
         },
     series: [{
-        name: '{{weather.schoolname}}',
+        name: '{{weather.school.name}}',
         data: {{temperature.1}}
     }]
 });
