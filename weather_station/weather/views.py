@@ -8,7 +8,7 @@ class WeatherViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (filters.OrderingFilter,)
     ordering_fields = ('-created','school')
     ordering = ('-created','school')
-    filter_fields = ('created' ,'temperature','humidity' ,'uv' ,'light','rainfall','school')
+    filter_fields = ('time' ,'temperature','humidity' ,'uv' ,'light','rainfall','school')
     queryset = Weather.objects.all()
     serializer_class = WeatherSerializer
     lookup_field = "school"

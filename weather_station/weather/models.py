@@ -13,7 +13,7 @@ class Weather(models.Model):
     school = models.ForeignKey(School,related_name='weathers',db_column='school',default=None,on_delete=models.CASCADE)
 
     def __str__(self):
-        weather = '{0. created 0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall} {0.school}'
+        weather = '{0.created} {0.temperature} {0.humidity} {0.uv} {0.light} {0.rainfall} {0.school}'
         return weather.format(self)
         #return weather.format(temperature,humidity,uv,light,rainfall ,school)
     class Meta:

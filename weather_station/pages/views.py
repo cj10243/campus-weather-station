@@ -47,7 +47,7 @@ class StatusView(TemplateView):
         context['rainfall'] = []
         context['weathers'] = []
         for i in range(0,len(schools)):
-            weathers_order_by_time = Weather.objects.filter(school=i+1).order_by('-time')
+            weathers_order_by_time = Weather.objects.filter(school=i+1).order_by('-created')
             context['weather'].append(weathers_order_by_time[0])
             context['temperature'].append([float(i.temperature) for i in weathers_order_by_time])
             context['humidity'].append([i.humidity for i in weathers_order_by_time])
