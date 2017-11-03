@@ -1,11 +1,12 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
-from weather import views
+from weather.views import WeatherViewSet
+from school.views import SchoolViewSet
 
 router = routers.DefaultRouter()
-router.register(r'weathers', views.WeatherViewSet)
-
+router.register(r'weathers', WeatherViewSet)
+router.register(r'schools', SchoolViewSet)
 urlpatterns = [
     # Examples:
     # url(r'^$', 'weather_station.views.home', name='home'),
