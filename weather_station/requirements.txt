@@ -2,7 +2,7 @@ bkcharts==0.2
 bokeh==0.12.3
 certifi==2017.7.27.1
 chardet==3.0.4
-Django==1.10
+Django==1.11.29
 django-rest-framework==0.1.0
 djangorestframework==3.6.4
 idna==2.6
